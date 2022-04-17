@@ -1,6 +1,6 @@
 package io.zipcoder.currencyconverterapplication;
 
-import io.zipcoder.currencyconverterapplication.currencies.AustralianDollar;
+import io.zipcoder.currencyconverterapplication.currencies.*;
 
 import java.util.Currency;
 
@@ -30,12 +30,50 @@ public enum CurrencyType {
     }
 
     public static CurrencyType getTypeOfCurrency(ConvertableCurrency currency) {
-        for (CurrencyType money : CurrencyType.values()) {
-            if (money.name().equals(currency.getClass().getName())) {
-                //return -1;
-            }
-            return money;
+        if (currency instanceof AustralianDollar){
+            return AUSTRALIAN_DOLLAR;
         }
-       return null;
+        if (currency instanceof CanadianDollar){
+            return CANADIAN_DOLLAR;
+        }
+        if (currency instanceof ChineseYR){
+            return CHINESE_YR;
+        }
+        if (currency instanceof Euro){
+            return EURO;
+        }
+        if (currency instanceof Franc){
+            return FRANC;
+        }
+        if (currency instanceof Pound){
+            return POUND;
+        }
+        if (currency instanceof Ringgit){
+            return RINGGIT;
+        }
+        if (currency instanceof Rupee){
+            return RUPEE;
+        }
+        if (currency instanceof SingaporeDollar){
+            return SINGAPORE_DOLLAR;
+        }
+        if (currency instanceof UniversalCurrency){
+            return UNIVERSAL_CURRENCY;
+        }
+        if (currency instanceof USDollar){
+            return US_DOLLAR;
+        }
+        if (currency instanceof Yen){
+            return YEN;
+        }
+        else{
+            return null;
+        }
+//        for (CurrencyType money : CurrencyType.values()) {
+//            if (money.name().equals(currency.getClass().getName())) {
+//            }
+//            return money;
+//        }
+//       return null;
     }
 }
