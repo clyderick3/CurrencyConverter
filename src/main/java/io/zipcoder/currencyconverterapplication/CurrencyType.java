@@ -32,9 +32,10 @@ public enum CurrencyType {
     public static CurrencyType getTypeOfCurrency(ConvertableCurrency currency) {
         for (CurrencyType money : CurrencyType.values()) {
             if (money.name().equals(currency.getClass().getName())) {
+                //return -1;
             }
             return money;
         }
-        return null;
+       return null;
     }
 }
